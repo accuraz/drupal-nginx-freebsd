@@ -1,0 +1,9 @@
+### Configuration file for specifying which hosts can invoke Drupal's
+### cron. This only applies if you're not using drush to run cron. Nginx's geo module needs to be actived.
+
+geo $not_allowed_cron {
+    default 1;
+    ## Add your set of hosts.
+    127.0.0.1 0; # Allows localhost
+    192.168.0.0/24 0; # Allows LAN
+}
